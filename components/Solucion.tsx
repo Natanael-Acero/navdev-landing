@@ -22,7 +22,7 @@ export function Solucion() {
             <span className="gradient-text">herramientas simples, útiles y escalables</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-8">
-            Soy desarrollador full-stack especializado en crear soluciones digitales que{" "}
+            Soy Software Engineer especializado en crear soluciones digitales que{" "}
             <strong className="text-white/80">realmente funcionan para negocios reales</strong>. No
             vendo tecnología por tecnología — vendo resultados.
           </p>

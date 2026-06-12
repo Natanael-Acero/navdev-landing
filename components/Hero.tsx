@@ -36,7 +36,7 @@ export function Hero() {
           </h1>
 
           <p className="text-white/50 text-lg leading-relaxed mb-10 max-w-lg">
-            Soy desarrollador full-stack con 8 años de experiencia. Creo herramientas digitales a medida — desde landing pages hasta sistemas completos — para negocios que quieren resultados reales.
+            Soy Software Engineer con 8 años de experiencia. Creo herramientas digitales a medida — desde landing pages hasta sistemas completos — para negocios que quieren resultados reales.
           </p>
 
           {/* CTAs */}
@@ -80,7 +80,7 @@ export function Hero() {
               <div className="h-full rounded-3xl overflow-hidden bg-[#15151f]">
                 <Image
                   src="/navdev-profile.jpeg"
-                  alt="Natanael Acero — Full-Stack Developer"
+                  alt="Natanael Acero — Software Engineer"
                   fill
                   className="object-cover object-top rounded-3xl"
                   priority
