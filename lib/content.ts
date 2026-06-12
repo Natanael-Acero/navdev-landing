@@ -1,7 +1,7 @@
 export const CONTACT = {
   whatsapp: "524491545195",
   email: "nataacero1@gmail.com",
-  brand: "NAVDEV",
+  brand: "Natanael Acero",
 };
 
 export const services = [
