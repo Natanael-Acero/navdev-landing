@@ -31,7 +31,7 @@ export function Hero() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-black leading-tight tracking-tight text-white mb-5">
-            Software y webs que{" "}
+            Soluciones que{" "}
             <span className="gradient-text">hacen crecer tu negocio</span>
           </h1>
 
