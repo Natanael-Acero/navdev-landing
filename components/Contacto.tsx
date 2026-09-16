@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-import { Send } from "lucide-react";
-import { Section } from "@/components/ui/Section";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { CONTACT } from "@/lib/content";
 
@@ -22,7 +20,9 @@ export function Contacto() {
     contacto: "",
   });
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
@@ -38,92 +38,118 @@ export function Contacto() {
   }
 
   const inputClass =
-    "w-full rounded-xl border border-white/10 bg-[#1a1a28] px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-blue-500/60 transition-colors";
+    "w-full border-b border-white/10 bg-transparent px-0 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-white/40 transition-colors duration-200";
 
   return (
-    <Section
-      id="contacto"
-      dark
-      title="Cuéntame de tu proyecto"
-      subtitle="Llena el formulario y te abro un chat de WhatsApp con tu información lista. Sin rodeos."
-    >
-      <div className="max-w-2xl mx-auto">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-xs text-white/50 mb-1.5 ml-1">Nombre *</label>
-              <input
-                required
-                name="nombre"
-                value={form.nombre}
-                onChange={handleChange}
-                placeholder="Tu nombre"
-                className={inputClass}
-              />
-            </div>
-            <div>
-              <label className="block text-xs text-white/50 mb-1.5 ml-1">Empresa o proyecto</label>
-              <input
-                name="empresa"
-                value={form.empresa}
-                onChange={handleChange}
-                placeholder="Nombre de tu negocio"
-                className={inputClass}
-              />
-            </div>
+    <section id="contacto" className="bg-[#080808] px-6 sm:px-10 lg:px-16 py-28 border-t border-white/7">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row lg:gap-24">
+          {/* Label */}
+          <div className="lg:w-56 mb-14 lg:mb-0 shrink-0">
+            <h2 className="font-display text-5xl sm:text-6xl text-white uppercase leading-[0.9]">
+              Get In
+              <br />
+              Touch
+            </h2>
+            <p className="mt-6 text-xs text-white/35 leading-relaxed">
+              Cuéntame de tu proyecto. Te respondo en menos de 24 horas.
+            </p>
+            <p className="mt-4 text-xs text-white/25">
+              {CONTACT.email}
+            </p>
           </div>
 
-          <div>
-            <label className="block text-xs text-white/50 mb-1.5 ml-1">¿Qué necesitas? *</label>
-            <textarea
-              required
-              name="necesidad"
-              value={form.necesidad}
-              onChange={handleChange}
-              rows={4}
-              placeholder="Ej: Quiero una landing page para mi servicio de limpieza con formulario de contacto y WhatsApp..."
-              className={inputClass + " resize-none"}
-            />
+          {/* Form */}
+          <div className="flex-1 max-w-xl">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid sm:grid-cols-2 gap-8">
+                <div>
+                  <label className="block text-xs text-white/30 tracking-widest uppercase mb-2">
+                    Nombre *
+                  </label>
+                  <input
+                    required
+                    name="nombre"
+                    value={form.nombre}
+                    onChange={handleChange}
+                    placeholder="Tu nombre"
+                    className={inputClass}
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs text-white/30 tracking-widest uppercase mb-2">
+                    Empresa
+                  </label>
+                  <input
+                    name="empresa"
+                    value={form.empresa}
+                    onChange={handleChange}
+                    placeholder="Nombre de tu negocio"
+                    className={inputClass}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs text-white/30 tracking-widest uppercase mb-2">
+                  ¿Qué necesitas? *
+                </label>
+                <textarea
+                  required
+                  name="necesidad"
+                  value={form.necesidad}
+                  onChange={handleChange}
+                  rows={3}
+                  placeholder="Describe tu proyecto brevemente..."
+                  className={inputClass + " resize-none"}
+                />
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-8">
+                <div>
+                  <label className="block text-xs text-white/30 tracking-widest uppercase mb-2">
+                    Presupuesto
+                  </label>
+                  <select
+                    name="presupuesto"
+                    value={form.presupuesto}
+                    onChange={handleChange}
+                    className={inputClass + " cursor-pointer"}
+                  >
+                    <option value="" className="bg-[#080808]">
+                      Selecciona un rango
+                    </option>
+                    {budgets.map((b) => (
+                      <option key={b} value={b} className="bg-[#080808]">
+                        {b}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs text-white/30 tracking-widest uppercase mb-2">
+                    WhatsApp o email
+                  </label>
+                  <input
+                    name="contacto"
+                    value={form.contacto}
+                    onChange={handleChange}
+                    placeholder="Tu número o correo"
+                    className={inputClass}
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="border border-white/25 rounded-full px-10 py-3.5 text-xs font-bold tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-all duration-300"
+              >
+                Enviar por WhatsApp ↗
+              </button>
+            </form>
           </div>
-
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-xs text-white/50 mb-1.5 ml-1">Presupuesto aproximado</label>
-              <select name="presupuesto" value={form.presupuesto} onChange={handleChange} className={inputClass}>
-                <option value="">Selecciona un rango</option>
-                {budgets.map((b) => (
-                  <option key={b} value={b}>{b}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className="block text-xs text-white/50 mb-1.5 ml-1">WhatsApp o email</label>
-              <input
-                name="contacto"
-                value={form.contacto}
-                onChange={handleChange}
-                placeholder="Tu número o correo"
-                className={inputClass}
-              />
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full inline-flex items-center justify-center gap-2 rounded-xl gradient-bg px-6 py-4 text-base font-semibold text-white hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-blue-900/30"
-          >
-            <Send size={18} />
-            Enviar por WhatsApp
-          </button>
-        </form>
-
-        <p className="mt-6 text-center text-sm text-white/40">
-          También puedes escribirme directamente a{" "}
-          <a href={`mailto:${CONTACT.email}`} className="text-blue-400 hover:underline">
-            {CONTACT.email}
-          </a>
-        </p>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

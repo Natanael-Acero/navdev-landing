@@ -113,6 +113,7 @@ export const steps = [
 export const portfolio = [
   {
     tag: "Sistema Web",
+    year: "2024",
     title: "Software de Rentas",
     description:
       "Sistema completo para gestionar contratos, pagos, inquilinos e inmuebles en tiempo real.",
@@ -120,6 +121,7 @@ export const portfolio = [
   },
   {
     tag: "App Móvil",
+    year: "2024",
     title: "App de Nutrición",
     description:
       "Aplicación para seguimiento de planes alimenticios, macros y progreso de pacientes.",
@@ -127,6 +129,7 @@ export const portfolio = [
   },
   {
     tag: "Dashboard",
+    year: "2023",
     title: "Sistema Administrativo",
     description:
       "Panel de control con reportes, inventario y módulo de ventas para negocio minorista.",
@@ -134,6 +137,7 @@ export const portfolio = [
   },
   {
     tag: "Landing Page",
+    year: "2023",
     title: "Landing para Clínica",
     description:
       "Página de captación de citas con formulario, WhatsApp y optimización SEO local.",
@@ -141,9 +145,18 @@ export const portfolio = [
   },
   {
     tag: "Automatización",
+    year: "2022",
     title: "Bot de Seguimiento",
     description:
       "Automatización que notifica a clientes por WhatsApp según etapa del proceso de venta.",
     tech: ["Node.js", "WhatsApp API", "n8n"],
+  },
+  {
+    tag: "MVP",
+    year: "2022",
+    title: "Plataforma E-commerce",
+    description:
+      "Tienda en línea con catálogo, carrito y pagos integrados para negocio local.",
+    tech: ["Next.js", "Stripe", "PostgreSQL"],
   },
 ];
