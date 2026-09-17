@@ -12,13 +12,13 @@ export function Proceso() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:gap-24">
           {/* Label */}
-          <div className="lg:w-56 mb-14 lg:mb-0 shrink-0 overflow-hidden">
+          <div className="lg:w-56 mb-14 lg:mb-0 shrink-0">
             <motion.h2
               className="font-display text-5xl sm:text-6xl text-white uppercase leading-[0.9]"
-              initial={{ y: "100%" }}
-              whileInView={{ y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
               Mi
               <br />

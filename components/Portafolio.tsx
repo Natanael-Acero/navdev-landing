@@ -112,16 +112,14 @@ function ProjectCard({ p, index }: { p: (typeof portfolio)[number]; index: numbe
               {String(index + 1).padStart(2, "0")} / {String(portfolio.length).padStart(2, "0")}
             </motion.p>
 
-            <div className="overflow-hidden mb-3">
-              <motion.h3
-                className="font-display text-5xl xl:text-6xl text-white uppercase leading-none"
-                initial={{ y: "100%" }}
-                animate={inView ? { y: 0 } : {}}
-                transition={{ duration: 0.7, delay: index * 0.12 + 0.2, ease: [0.16, 1, 0.3, 1] }}
-              >
-                {p.title}
-              </motion.h3>
-            </div>
+            <motion.h3
+              className="font-display text-5xl xl:text-6xl text-white uppercase leading-none mb-3"
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: index * 0.12 + 0.2, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {p.title}
+            </motion.h3>
 
             <p className="text-white/30 text-xs tracking-widest uppercase mb-6">{p.tag}</p>
             <p className="text-white/45 text-sm leading-relaxed">{p.description}</p>
@@ -168,12 +166,12 @@ export function Portafolio() {
     <section id="portafolio" className="bg-[#080808] px-6 sm:px-10 lg:px-16 py-28 border-t border-white/7">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
-        <div className="flex items-end justify-between mb-16 overflow-hidden" ref={headingRef}>
+        <div className="flex items-end justify-between mb-16" ref={headingRef}>
           <motion.h2
             className="font-display text-[14vw] sm:text-[10vw] lg:text-[8vw] text-white uppercase leading-[0.9]"
-            initial={{ y: "100%" }}
-            animate={headingInView ? { y: 0 } : {}}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={headingInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             Trabajo
             <br />

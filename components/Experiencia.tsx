@@ -48,17 +48,15 @@ export function Experiencia() {
         <div className="flex flex-col lg:flex-row lg:gap-24">
           {/* Label */}
           <div className="lg:w-56 mb-14 lg:mb-0 shrink-0">
-            <div className="overflow-hidden">
-              <motion.h2
-                className="font-display text-4xl text-white uppercase leading-[0.9]"
-                initial={{ y: "100%" }}
-                whileInView={{ y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              >
-                Experiencia
-              </motion.h2>
-            </div>
+            <motion.h2
+              className="font-display text-4xl text-white uppercase leading-[0.9]"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Experiencia
+            </motion.h2>
           </div>
 
           {/* Experience list */}

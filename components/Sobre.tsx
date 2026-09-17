@@ -35,18 +35,17 @@ export function Sobre() {
 
           {/* Content */}
           <div className="flex-1">
-            <div className="overflow-hidden mb-12">
+            <div className="mb-12">
               {lines.map((line, i) => (
-                <div key={i} className="overflow-hidden">
-                  <motion.p
-                    className="font-display text-3xl sm:text-4xl lg:text-5xl text-white uppercase leading-[1.05]"
-                    initial={{ y: "100%" }}
-                    animate={inView ? { y: 0 } : {}}
-                    transition={{ duration: 0.8, delay: 0.2 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                  >
-                    {line}
-                  </motion.p>
-                </div>
+                <motion.p
+                  key={i}
+                  className="font-display text-3xl sm:text-4xl lg:text-5xl text-white uppercase leading-[1.05]"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.7, delay: 0.2 + i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  {line}
+                </motion.p>
               ))}
             </div>
 

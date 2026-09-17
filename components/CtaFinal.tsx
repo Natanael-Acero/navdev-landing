@@ -23,26 +23,22 @@ export function CtaFinal() {
     >
       <div className="max-w-5xl mx-auto">
         {/* Big heading — words slide up */}
-        <div className="overflow-hidden mb-4">
-          <motion.div
-            className="font-display text-[14vw] sm:text-[11vw] lg:text-[9vw] text-white uppercase leading-[0.88]"
-            initial={{ y: "100%" }}
-            animate={inView ? { y: 0 } : {}}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Trabajemos
-          </motion.div>
-        </div>
-        <div className="overflow-hidden mb-12">
-          <motion.div
-            className="font-display text-[14vw] sm:text-[11vw] lg:text-[9vw] text-white uppercase leading-[0.88]"
-            initial={{ y: "100%" }}
-            animate={inView ? { y: 0 } : {}}
-            transition={{ duration: 1, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Juntos©
-          </motion.div>
-        </div>
+        <motion.div
+          className="font-display text-[14vw] sm:text-[11vw] lg:text-[9vw] text-white uppercase leading-[0.88] mb-2"
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        >
+          Trabajemos
+        </motion.div>
+        <motion.div
+          className="font-display text-[14vw] sm:text-[11vw] lg:text-[9vw] text-white uppercase leading-[0.88] mb-12"
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.9, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+        >
+          Juntos©
+        </motion.div>
 
         {/* CTA button */}
         <motion.a
