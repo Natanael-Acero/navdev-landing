@@ -10,12 +10,12 @@ const fadeUp = (delay: number) => ({
 
 export function Hero() {
   return (
-    <section className="h-[100dvh] flex flex-col bg-[#080808] overflow-hidden">
-      {/* Flexible spacer at top — shrinks on mobile */}
-      <div className="flex-1" style={{ minHeight: "4rem" }} />
+    <section className="lg:h-[100dvh] flex flex-col bg-[#080808] overflow-hidden">
+      {/* Desktop only: spacer pushes name to the bottom */}
+      <div className="hidden lg:block lg:flex-1" />
 
-      {/* Badge + name anchored to bottom */}
-      <div className="px-6 sm:px-10 lg:px-16 pb-6 sm:pb-8">
+      {/* Badge + name */}
+      <div className="px-6 sm:px-10 lg:px-16 pt-24 lg:pt-0 pb-6 sm:pb-8">
         <motion.div {...fadeUp(0.2)} className="inline-flex items-center gap-2.5 mb-6 sm:mb-10">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60" />
@@ -40,9 +40,9 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Footer row — always at very bottom */}
+      {/* Footer row — pinned to bottom on desktop, flows naturally on mobile */}
       <motion.div
-        className="px-6 sm:px-10 lg:px-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0 py-4 sm:py-5 border-t border-white/7 shrink-0"
+        className="lg:mt-auto px-6 sm:px-10 lg:px-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0 py-4 sm:py-5 mt-8 border-t border-white/7 shrink-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.1 }}
