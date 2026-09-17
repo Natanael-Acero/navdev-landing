@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -24,7 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${bebas.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased cursor-none">
+        <CustomCursor />
+        {children}
+      </body>
     </html>
   );
 }

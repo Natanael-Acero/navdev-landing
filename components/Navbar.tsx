@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { buildWhatsAppUrl, defaultMessage } from "@/lib/whatsapp";
 
 export function Navbar() {
@@ -22,7 +23,12 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#080808]/90 backdrop-blur-sm border-b border-white/5">
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50 bg-[#080808]/90 backdrop-blur-sm border-b border-white/5"
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 sm:px-10 py-4">
         <span className="text-xs text-white/35 font-mono tracking-widest uppercase select-none">
           Local / {time || "––:––:––"}
@@ -44,6 +50,6 @@ export function Navbar() {
           Contactar
         </a>
       </nav>
-    </header>
+    </motion.header>
   );
 }
