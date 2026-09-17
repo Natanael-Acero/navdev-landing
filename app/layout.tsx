@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${bebas.variable}`}>
-      <body className="font-sans antialiased cursor-none">
+      <body className="font-sans antialiased md:cursor-none">
         <CustomCursor />
         {children}
       </body>

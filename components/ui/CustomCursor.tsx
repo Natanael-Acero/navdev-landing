@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export function CustomCursor() {
+  const [isTouch, setIsTouch] = useState(false);
   const [visible, setVisible] = useState(false);
   const [clicking, setClicking] = useState(false);
   const [hovering, setHovering] = useState(false);
@@ -19,6 +20,12 @@ export function CustomCursor() {
   const ringY = useSpring(mouseY, { stiffness: 120, damping: 22 });
 
   useEffect(() => {
+    // Disable on touch devices
+    if (window.matchMedia("(hover: none)").matches) {
+      setIsTouch(true);
+      return;
+    }
+
     const move = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -52,6 +59,8 @@ export function CustomCursor() {
       window.removeEventListener("mouseup", up);
     };
   }, [mouseX, mouseY, visible]);
+
+  if (isTouch) return null;
 
   return (
     <>
