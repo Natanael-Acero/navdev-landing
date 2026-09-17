@@ -21,9 +21,9 @@ export function Servicios() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
-              My
+              Lo Que
               <br />
-              Expertise
+              Hago
             </motion.h2>
           </div>
 

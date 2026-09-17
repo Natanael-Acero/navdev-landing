@@ -64,9 +64,9 @@ export function Contacto() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
-              Get In
+              Hablemos
               <br />
-              Touch
+              Hoy
             </motion.h2>
             <motion.p
               className="mt-6 text-xs text-white/35 leading-relaxed"

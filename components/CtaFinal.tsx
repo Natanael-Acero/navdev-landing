@@ -83,7 +83,7 @@ export function CtaFinal() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
-          Basado en México — creo herramientas digitales que hacen crecer negocios reales.
+          Desde Aguascalientes, México — creo herramientas digitales que hacen crecer negocios reales.
         </motion.p>
       </div>
     </motion.section>

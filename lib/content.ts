@@ -7,39 +7,39 @@ export const CONTACT = {
 export const services = [
   {
     icon: "Monitor",
-    title: "Landing Pages Profesionales",
+    title: "Productos Web a Medida",
     description:
-      "Páginas de ventas rápidas, modernas y optimizadas para convertir visitantes en clientes.",
+      "Aplicaciones web completas, desde landing pages hasta sistemas complejos — rápidas, modernas y listas para producción.",
   },
   {
-    icon: "Code2",
-    title: "Sistemas Web a Medida",
+    icon: "Smartphone",
+    title: "Aplicaciones Móviles",
     description:
-      "Software personalizado para gestionar tu negocio: inventarios, pedidos, clientes y más.",
+      "Apps iOS y Android con React Native. Un solo código base, experiencia nativa en ambas plataformas.",
   },
   {
-    icon: "LayoutDashboard",
-    title: "Dashboards Administrativos",
+    icon: "Bot",
+    title: "IA Aplicada a Productos",
     description:
-      "Paneles de control con métricas en tiempo real para tomar mejores decisiones.",
+      "Integración de modelos de lenguaje (OpenAI, Anthropic, Gemini) en tus flujos: asistentes, automatizaciones y análisis inteligente.",
+  },
+  {
+    icon: "FileCode2",
+    title: "Spec-Driven Development",
+    description:
+      "Desarrollo guiado por especificación con IA: de requerimientos a código de producción con mayor velocidad y calidad.",
   },
   {
     icon: "Rocket",
     title: "MVPs para Startups",
     description:
-      "Valida tu idea rápido con un producto funcional sin gastar una fortuna.",
-  },
-  {
-    icon: "Bot",
-    title: "Automatizaciones con IA",
-    description:
-      "Procesos automáticos que ahorran horas de trabajo manual: reportes, respuestas, flujos.",
+      "Valida tu idea rápido con un producto funcional. Del concepto a producción en semanas, sin perder calidad.",
   },
   {
     icon: "Plug",
-    title: "Integraciones Digitales",
+    title: "Integraciones y Automatizaciones",
     description:
-      "Conecta WhatsApp, pasarelas de pago, formularios y bases de datos en un solo sistema.",
+      "Conecta APIs, pasarelas de pago, CRMs y herramientas en flujos automatizados que eliminan trabajo manual.",
   },
 ];
 
