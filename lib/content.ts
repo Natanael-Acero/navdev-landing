@@ -112,51 +112,30 @@ export const steps = [
 
 export const portfolio = [
   {
-    tag: "Sistema Web",
+    tag: "SaaS · Software de Rentas",
     year: "2024",
-    title: "Software de Rentas",
+    title: "Rentaio",
     description:
-      "Sistema completo para gestionar contratos, pagos, inquilinos e inmuebles en tiempo real.",
-    tech: ["Next.js", "PostgreSQL", "Tailwind"],
+      "Plataforma todo-en-uno para administradores de propiedades en México. Contratos, pagos, inquilinos y reportes en un solo lugar.",
+    tech: ["Next.js", "PostgreSQL", "Stripe"],
+    url: "https://rentaio.app",
   },
   {
-    tag: "App Móvil",
+    tag: "E-commerce · Moda Streetwear",
     year: "2024",
-    title: "App de Nutrición",
+    title: "OV'SIZE",
     description:
-      "Aplicación para seguimiento de planes alimenticios, macros y progreso de pacientes.",
-    tech: ["React Native", "Node.js", "Firebase"],
+      "Tienda en línea para marca de ropa streetwear con catálogo, carrito y experiencia visual inmersiva.",
+    tech: ["WordPress", "WooCommerce", "Custom Theme"],
+    url: "https://ovsize.store",
   },
   {
-    tag: "Dashboard",
-    year: "2023",
-    title: "Sistema Administrativo",
+    tag: "Plataforma Web + App",
+    year: "2025",
+    title: "Champions Performance",
     description:
-      "Panel de control con reportes, inventario y módulo de ventas para negocio minorista.",
-    tech: ["React", "Express", "MySQL"],
-  },
-  {
-    tag: "Landing Page",
-    year: "2023",
-    title: "Landing para Clínica",
-    description:
-      "Página de captación de citas con formulario, WhatsApp y optimización SEO local.",
-    tech: ["Next.js", "Tailwind", "Vercel"],
-  },
-  {
-    tag: "Automatización",
-    year: "2022",
-    title: "Bot de Seguimiento",
-    description:
-      "Automatización que notifica a clientes por WhatsApp según etapa del proceso de venta.",
-    tech: ["Node.js", "WhatsApp API", "n8n"],
-  },
-  {
-    tag: "MVP",
-    year: "2022",
-    title: "Plataforma E-commerce",
-    description:
-      "Tienda en línea con catálogo, carrito y pagos integrados para negocio local.",
-    tech: ["Next.js", "Stripe", "PostgreSQL"],
+      "Plataforma web y app móvil para entrenadores: gestión de atletas, planes de entrenamiento y seguimiento de progreso.",
+    tech: ["Next.js", "React Native", "Node.js"],
+    url: "https://www.championsperformance.app",
   },
 ];

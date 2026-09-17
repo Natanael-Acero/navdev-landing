@@ -1,4 +1,9 @@
+import Image from "next/image";
 import { portfolio } from "@/lib/content";
+
+function screenshotUrl(siteUrl: string) {
+  return `https://api.microlink.io?url=${encodeURIComponent(siteUrl)}&screenshot=true&meta=false&embed=screenshot.url`;
+}
 
 export function Portafolio() {
   return (
@@ -11,29 +16,69 @@ export function Portafolio() {
           Work
         </h2>
 
-        {/* Grid 2-col */}
-        <div className="grid sm:grid-cols-2 gap-4">
-          {portfolio.map((p) => (
-            <div
+        {/* Projects */}
+        <div className="flex flex-col gap-4">
+          {portfolio.map((p, i) => (
+            <a
               key={p.title}
-              className="group border border-white/7 rounded-2xl overflow-hidden bg-[#0f0f0f] hover:border-white/18 transition-colors duration-400"
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group grid sm:grid-cols-[1fr_auto] border border-white/7 rounded-2xl overflow-hidden bg-[#0f0f0f] hover:border-white/18 transition-colors duration-300"
             >
-              {/* Visual area */}
-              <div className="h-52 sm:h-60 bg-[#141414] flex items-center justify-center relative overflow-hidden">
-                <span className="font-display text-[8rem] text-white/4 select-none group-hover:text-white/7 transition-colors duration-400 leading-none">
-                  {p.title[0]}
-                </span>
+              {/* Screenshot */}
+              <div className="relative h-56 sm:h-72 overflow-hidden bg-[#141414]">
+                <Image
+                  src={screenshotUrl(p.url)}
+                  alt={p.title}
+                  fill
+                  className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                  unoptimized
+                />
+                {/* Gradient overlay at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/60 via-transparent to-transparent" />
               </div>
 
-              {/* Meta row */}
-              <div className="px-6 py-5 flex items-center justify-between border-t border-white/7">
+              {/* Info panel */}
+              <div className="sm:w-64 lg:w-80 p-8 flex flex-col justify-between border-t sm:border-t-0 sm:border-l border-white/7">
                 <div>
-                  <p className="text-white font-semibold text-base leading-tight">{p.title}</p>
-                  <p className="text-white/35 text-xs tracking-widest uppercase mt-1">{p.tag}</p>
+                  <p className="text-white/25 text-xs tracking-widest uppercase mb-4">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="font-display text-4xl sm:text-5xl text-white uppercase leading-none mb-4">
+                    {p.title}
+                  </h3>
+                  <p className="text-white/40 text-xs tracking-widest uppercase mb-6">
+                    {p.tag}
+                  </p>
+                  <p className="text-white/50 text-sm leading-relaxed">
+                    {p.description}
+                  </p>
                 </div>
-                <span className="text-white/20 text-sm font-mono">{p.year}</span>
+
+                <div className="mt-8">
+                  {/* Tech stack */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {p.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs text-white/30 border border-white/10 rounded-full px-3 py-1"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Link */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/20 text-xs font-mono">{p.year}</span>
+                    <span className="text-xs font-bold tracking-widest uppercase text-white/40 group-hover:text-white transition-colors duration-200">
+                      Ver proyecto ↗
+                    </span>
+                  </div>
+                </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
