@@ -29,14 +29,15 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 sm:px-10 py-4">
-        <span className="text-xs text-white/35 font-mono tracking-widest uppercase select-none">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 sm:px-10 py-4 gap-4">
+        {/* Reloj — oculto en mobile para dar espacio */}
+        <span className="hidden sm:block text-xs text-white/35 font-mono tracking-widest uppercase select-none shrink-0">
           Local / {time || "––:––:––"}
         </span>
 
         <a
           href="#"
-          className="text-sm font-black tracking-[0.25em] text-white uppercase hover:text-white/70 transition-colors"
+          className="text-sm font-black tracking-[0.25em] text-white uppercase hover:text-white/70 transition-colors sm:absolute sm:left-1/2 sm:-translate-x-1/2"
         >
           Natanael
         </a>
@@ -45,7 +46,7 @@ export function Navbar() {
           href={buildWhatsAppUrl(defaultMessage)}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs font-bold tracking-widest uppercase border border-white/25 rounded-full px-5 py-2 text-white hover:bg-white hover:text-black transition-all duration-300"
+          className="ml-auto text-xs font-bold tracking-widest uppercase border border-white/25 rounded-full px-4 sm:px-5 py-2 text-white hover:bg-white hover:text-black transition-all duration-300 shrink-0"
         >
           Contactar
         </a>
