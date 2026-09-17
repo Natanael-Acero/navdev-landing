@@ -71,18 +71,18 @@ export function Experiencia() {
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.1 + i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                <div className="flex-1">
-                  <div className="flex items-baseline gap-4 flex-wrap">
-                    <h3 className="font-display text-2xl sm:text-3xl text-white uppercase group-hover:text-white/70 transition-colors duration-300">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-baseline gap-3 flex-wrap">
+                    <h3 className="font-display text-2xl sm:text-3xl text-white uppercase group-hover:text-white/70 transition-colors duration-300 break-words">
                       {item.company}
                     </h3>
-                    <span className="text-xs text-white/25 tracking-widest uppercase">
+                    <span className="text-xs text-white/25 tracking-widest uppercase shrink-0">
                       {item.role}
                     </span>
                   </div>
                   <p className="text-xs text-white/20 mt-1">{item.location}</p>
                 </div>
-                <span className="text-xs text-white/25 font-mono mt-3 sm:mt-0 sm:ml-8 shrink-0">
+                <span className="text-xs text-white/25 font-mono mt-2 sm:mt-0 sm:ml-6 shrink-0">
                   {item.period}
                 </span>
               </motion.div>

@@ -10,6 +10,7 @@ body {
   background-color: #080808;
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 @layer utilities {
