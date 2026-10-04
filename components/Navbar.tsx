@@ -24,7 +24,7 @@ export function Navbar() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 bg-[#080808]/90 backdrop-blur-sm border-b border-white/5"
+      className="fixed top-0 left-0 right-0 z-50 bg-[#080808]/90 backdrop-blur-sm border-b border-white/7"
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}

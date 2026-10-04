@@ -41,7 +41,7 @@ export function Proceso() {
                   <h3 className="font-semibold text-white uppercase tracking-wider text-sm mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-white/45 leading-relaxed max-w-lg">{step.description}</p>
+                  <p className="text-sm text-white/40 leading-relaxed max-w-lg">{step.description}</p>
                 </div>
               </motion.div>
             ))}

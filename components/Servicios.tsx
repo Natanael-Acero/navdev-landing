@@ -40,14 +40,9 @@ export function Servicios() {
                   className="w-full flex items-center justify-between py-6 text-left group cursor-pointer"
                   onClick={() => setOpen(open === i ? null : i)}
                 >
-                  <div className="flex items-center gap-6">
-                    <span className="text-xs text-white/25 font-mono shrink-0">
-                      ({String(i + 1).padStart(2, "0")})
-                    </span>
-                    <span className="text-base sm:text-lg font-semibold text-white group-hover:text-white/70 transition-colors duration-200 uppercase tracking-wider">
-                      {s.title}
-                    </span>
-                  </div>
+                  <span className="text-base sm:text-lg font-semibold text-white group-hover:text-white/60 transition-colors duration-200 uppercase tracking-wider">
+                    {s.title}
+                  </span>
                   <motion.span
                     className="text-white/35 text-2xl leading-none ml-6 shrink-0"
                     animate={{ rotate: open === i ? 45 : 0 }}
@@ -67,7 +62,7 @@ export function Servicios() {
                       transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-6 pl-[3.25rem] text-sm text-white/45 leading-relaxed max-w-xl">
+                      <p className="pb-6 text-sm text-white/40 leading-relaxed max-w-xl">
                         {s.description}
                       </p>
                     </motion.div>

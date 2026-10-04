@@ -106,18 +106,18 @@ function ProjectRow({
         </motion.h3>
 
         {/* Tag — hidden on small screens */}
-        <span className="hidden md:block text-xs text-white/25 tracking-[0.2em] uppercase shrink-0 max-w-[200px] text-right leading-snug">
+        <span className="hidden md:block text-xs text-white/30 tracking-[0.2em] uppercase shrink-0 max-w-[200px] text-right leading-snug">
           {p.tag}
         </span>
 
         {/* Year */}
-        <span className="hidden sm:block text-xs text-white/20 font-mono shrink-0">
+        <span className="hidden sm:block text-xs text-white/25 font-mono shrink-0">
           {p.year}
         </span>
 
         {/* Arrow */}
         <motion.span
-          className="text-lg text-white/20 group-hover:text-white shrink-0 transition-colors duration-300"
+          className="text-lg text-white/25 group-hover:text-white shrink-0 transition-colors duration-300"
           variants={{ hover: { x: 4, y: -4 } }}
           transition={{ type: "spring", stiffness: 400, damping: 30 }}
         >

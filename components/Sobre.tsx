@@ -24,7 +24,7 @@ export function Sobre() {
           {/* Label */}
           <div className="lg:w-56 mb-14 lg:mb-0 shrink-0">
             <motion.p
-              className="text-xs text-white/25 tracking-[0.3em] uppercase"
+              className="text-xs text-white/30 tracking-[0.3em] uppercase"
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -57,15 +57,15 @@ export function Sobre() {
             >
               <div>
                 <p className="font-display text-4xl text-white mb-1">6+</p>
-                <p className="text-xs text-white/35 tracking-widest uppercase">Años de experiencia</p>
+                <p className="text-xs text-white/30 tracking-widest uppercase">Años de experiencia</p>
               </div>
               <div>
                 <p className="font-display text-4xl text-white mb-1">10+</p>
-                <p className="text-xs text-white/35 tracking-widest uppercase">Proyectos entregados</p>
+                <p className="text-xs text-white/30 tracking-widest uppercase">Proyectos entregados</p>
               </div>
               <div>
                 <p className="font-display text-4xl text-white mb-1">3</p>
-                <p className="text-xs text-white/35 tracking-widest uppercase">Países con clientes</p>
+                <p className="text-xs text-white/30 tracking-widest uppercase">Países con clientes</p>
               </div>
             </motion.div>
           </div>

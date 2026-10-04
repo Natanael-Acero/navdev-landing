@@ -49,7 +49,7 @@ export function Experiencia() {
           {/* Label */}
           <div className="lg:w-56 mb-14 lg:mb-0 shrink-0">
             <motion.h2
-              className="font-display text-4xl text-white uppercase leading-[0.9]"
+              className="font-display text-5xl sm:text-6xl text-white uppercase leading-[0.9]"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -74,13 +74,13 @@ export function Experiencia() {
                     <h3 className="font-display text-2xl sm:text-3xl text-white uppercase group-hover:text-white/70 transition-colors duration-300 break-words">
                       {item.company}
                     </h3>
-                    <span className="text-xs text-white/25 tracking-widest uppercase shrink-0">
+                    <span className="text-xs text-white/40 tracking-widest uppercase shrink-0">
                       {item.role}
                     </span>
                   </div>
-                  <p className="text-xs text-white/20 mt-1">{item.location}</p>
+                  <p className="text-xs text-white/25 mt-1">{item.location}</p>
                 </div>
-                <span className="text-xs text-white/25 font-mono mt-2 sm:mt-0 sm:ml-6 shrink-0">
+                <span className="text-xs text-white/30 font-mono mt-2 sm:mt-0 sm:ml-6 shrink-0">
                   {item.period}
                 </span>
               </motion.div>

@@ -13,7 +13,7 @@ export function Footer() {
       transition={{ duration: 0.8 }}
     >
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-8 text-center">
-        <p className="text-xs text-white/30 tracking-widest uppercase max-w-xs leading-relaxed">
+        <p className="text-xs text-white/25 tracking-widest uppercase max-w-xs leading-relaxed">
           Desde Aguascalientes, México — ingeniero de software & desarrollador freelance
         </p>
 
