@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#080808"/>
+  <text
+    x="16"
+    y="13"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Arial Black, Impact, sans-serif"
+    font-size="10"
+    font-weight="900"
+    letter-spacing="-0.5"
+    fill="#ffffff"
+  >NN</text>
+  <text
+    x="16"
+    y="24"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Arial Black, Impact, sans-serif"
+    font-size="10"
+    font-weight="900"
+    letter-spacing="-0.5"
+    fill="#ffffff"
+  >AV</text>
+</svg>
