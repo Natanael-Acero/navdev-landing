@@ -1,10 +1,26 @@
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
-import { CustomCursor } from "@/components/ui/CustomCursor";
+import dynamic from "next/dynamic";
+
+const CustomCursor = dynamic(
+  () => import("@/components/ui/CustomCursor").then((m) => ({ default: m.CustomCursor })),
+  { ssr: false }
+);
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--font-bebas" });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  preload: true,
+});
+const bebas = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bebas",
+  display: "swap",
+  preload: true,
+});
 
 export const metadata: Metadata = {
   title: "Natanael Acero — Software Engineer Freelance",
@@ -25,6 +41,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${bebas.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://api.microlink.io" />
+        <link rel="dns-prefetch" href="https://api.microlink.io" />
+      </head>
       <body className="font-sans antialiased md:cursor-none">
         <CustomCursor />
         {children}

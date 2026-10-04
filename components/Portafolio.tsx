@@ -134,7 +134,6 @@ export function Portafolio() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const [hoveredUrl, setHoveredUrl] = useState<string | null>(null);
-  const [previewPos, setPreviewPos] = useState({ x: 0, y: 0 });
 
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
