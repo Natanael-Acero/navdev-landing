@@ -36,7 +36,7 @@ export function Proceso() {
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                <span className="text-xs text-white/20 font-mono mt-1 shrink-0 w-6">{step.number}</span>
+                <span className="text-[10px] text-white/25 font-mono mt-1 shrink-0 w-6 tracking-wide">{step.number}</span>
                 <div>
                   <h3 className="font-semibold text-white uppercase tracking-wider text-sm mb-2">
                     {step.title}

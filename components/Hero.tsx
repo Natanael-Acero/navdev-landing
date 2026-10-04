@@ -16,12 +16,12 @@ export function Hero() {
 
       {/* Badge + name */}
       <div className="px-6 sm:px-10 lg:px-16 pt-24 lg:pt-0 pb-6 sm:pb-8">
-        <motion.div {...fadeUp(0.2)} className="inline-flex items-center gap-2.5 mb-6 sm:mb-10">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+        <motion.div {...fadeUp(0.2)} className="inline-flex items-center gap-2.5 mb-6 sm:mb-10 border border-white/10 rounded-full px-4 py-1.5">
+          <span className="relative flex h-1.5 w-1.5 shrink-0">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-50" />
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400" />
           </span>
-          <span className="text-xs text-white/40 tracking-[0.25em] uppercase">
+          <span className="text-[11px] text-white/50 tracking-[0.22em] uppercase">
             Disponible para proyectos
           </span>
         </motion.div>
@@ -47,10 +47,10 @@ export function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.1 }}
       >
-        <span className="text-xs text-white/35 tracking-[0.2em] uppercase">
+        <span className="text-[11px] text-white/30 tracking-[0.2em] uppercase">
           Desde Aguascalientes, México
         </span>
-        <span className="text-xs text-white/35 tracking-[0.2em] uppercase">
+        <span className="text-[11px] text-white/30 tracking-[0.2em] uppercase">
           Ingeniero de Software · Freelance
         </span>
       </motion.div>

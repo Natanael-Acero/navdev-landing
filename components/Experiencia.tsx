@@ -60,7 +60,7 @@ export function Experiencia() {
           </div>
 
           {/* Experience list */}
-          <div ref={ref} className="flex-1">
+          <div ref={ref} className="flex-1 border-t border-white/7">
             {experience.map((item, i) => (
               <motion.div
                 key={item.company}
@@ -71,7 +71,7 @@ export function Experiencia() {
               >
                 <div className="flex-1 min-w-0">
                   <div className="flex items-baseline gap-3 flex-wrap">
-                    <h3 className="font-display text-2xl sm:text-3xl text-white uppercase group-hover:text-white/70 transition-colors duration-300 break-words">
+                    <h3 className="font-display text-2xl sm:text-3xl text-white uppercase group-hover:text-white/65 transition-colors duration-500 break-words">
                       {item.company}
                     </h3>
                     <span className="text-xs text-white/40 tracking-widest uppercase shrink-0">

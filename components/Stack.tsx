@@ -80,7 +80,7 @@ export function Stack() {
                   {cat.items.map((name) => (
                     <span
                       key={name}
-                      className="text-sm text-white/60 border border-white/8 rounded-full px-4 py-1.5 hover:border-white/20 hover:text-white/85 transition-all duration-200 cursor-default"
+                      className="text-sm text-white/55 border border-white/10 rounded-full px-4 py-1.5 hover:border-white/25 hover:text-white/90 hover:bg-white/[0.02] transition-all duration-200 cursor-default"
                     >
                       {name}
                     </span>

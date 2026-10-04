@@ -24,7 +24,7 @@ export function Sobre() {
           {/* Label */}
           <div className="lg:w-56 mb-14 lg:mb-0 shrink-0">
             <motion.p
-              className="text-xs text-white/30 tracking-[0.3em] uppercase"
+              className="text-[10px] text-white/30 tracking-[0.35em] uppercase font-medium"
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}

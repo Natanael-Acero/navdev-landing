@@ -44,11 +44,14 @@ export function Servicios() {
                     {s.title}
                   </span>
                   <motion.span
-                    className="text-white/35 text-2xl leading-none ml-6 shrink-0"
-                    animate={{ rotate: open === i ? 45 : 0 }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    className="w-5 h-[1px] bg-white/30 shrink-0 ml-6 relative block"
+                    aria-hidden="true"
                   >
-                    +
+                    <motion.span
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1px] h-5 bg-white/30 block"
+                      animate={{ scaleY: open === i ? 0 : 1, opacity: open === i ? 0 : 1 }}
+                      transition={{ duration: 0.2, ease: "easeInOut" }}
+                    />
                   </motion.span>
                 </button>
 

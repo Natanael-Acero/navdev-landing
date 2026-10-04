@@ -86,7 +86,7 @@ function ProjectRow({
         href={p.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-6 sm:gap-10 py-6 sm:py-8 border-b border-white/7 hover:border-white/15 transition-colors duration-300 cursor-none"
+        className="group flex items-center gap-6 sm:gap-10 py-7 sm:py-9 border-b border-white/7 hover:border-white/12 hover:bg-white/[0.018] -mx-4 px-4 sm:-mx-6 sm:px-6 transition-all duration-300 cursor-none rounded-sm"
         onMouseEnter={() => onHover(p.url)}
         onMouseLeave={onLeave}
         whileHover="hover"

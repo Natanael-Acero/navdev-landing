@@ -57,7 +57,7 @@ export function CtaFinal() {
 
         {/* Arch photo with parallax */}
         <motion.div
-          className="mx-auto w-60 sm:w-72 overflow-hidden rounded-t-full border border-white/7"
+          className="mx-auto w-60 sm:w-72 overflow-hidden rounded-t-full border border-white/10 shadow-[0_0_60px_-12px_rgba(255,255,255,0.06)]"
           initial={{ opacity: 0, scale: 0.92 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
