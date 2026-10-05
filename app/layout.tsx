@@ -23,12 +23,12 @@ const bebas = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "Natanael Acero — Software Engineer Freelance",
+  title: "Natanael Acero — Full Stack Software Engineer",
   description:
-    "Desarrollo landing pages, sistemas web, dashboards, MVPs y automatizaciones con IA para negocios que quieren crecer digitalmente.",
+    "Ingeniero de software full stack con 6+ años de experiencia. Desarrollo sistemas web, apps móviles, MVPs y automatizaciones con IA para negocios, y disponible para roles remotos.",
   keywords: ["desarrollo web", "landing page", "sistema web", "automatización", "MVP", "freelance", "México"],
   openGraph: {
-    title: "Natanael Acero — Software Engineer Freelance",
+    title: "Natanael Acero — Full Stack Software Engineer",
     description: "Herramientas digitales a medida para negocios que quieren resultados reales.",
     type: "website",
   },

@@ -64,8 +64,8 @@ export function Sobre() {
                 <p className="text-xs text-white/30 tracking-widest uppercase">Proyectos entregados</p>
               </div>
               <div>
-                <p className="font-display text-4xl text-white mb-1">3</p>
-                <p className="text-xs text-white/30 tracking-widest uppercase">Países con clientes</p>
+                <p className="font-display text-4xl text-white mb-1">5+</p>
+                <p className="text-xs text-white/30 tracking-widest uppercase">Países LATAM</p>
               </div>
             </motion.div>
           </div>

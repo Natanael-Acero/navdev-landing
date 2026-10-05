@@ -17,10 +17,12 @@ export function Footer() {
           Desde Aguascalientes, México — ingeniero de software & desarrollador freelance
         </p>
 
-        <div className="flex gap-10">
+        <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
           {[
             { label: "WhatsApp ↗", href: buildWhatsAppUrl(defaultMessage), external: true },
             { label: "Email ↗", href: `mailto:${CONTACT.email}`, external: false },
+            { label: "LinkedIn ↗", href: CONTACT.linkedin, external: true },
+            { label: "GitHub ↗", href: CONTACT.github, external: true },
           ].map(({ label, href, external }) => (
             <motion.a
               key={label}

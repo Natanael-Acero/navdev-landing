@@ -5,23 +5,27 @@ import { motion, useInView } from "framer-motion";
 const categories = [
   {
     label: "Interfaz",
-    items: ["React / Next.js", "TypeScript", "Angular", "Tailwind CSS"],
+    items: ["React / Next.js", "TypeScript", "Angular", "Tailwind CSS", "Storybook"],
   },
   {
     label: "Servidor",
-    items: ["Node.js / Express", "PostgreSQL", "MongoDB", "SQL Server"],
+    items: ["Node.js / Express", ".NET", "PostgreSQL", "MongoDB", "SQL Server", "Oracle"],
   },
   {
     label: "Móvil & IA",
-    items: ["React Native", "OpenAI / Anthropic", "LangChain"],
+    items: ["React Native", "Ionic", ".NET MAUI", "OpenAI / Anthropic", "LangChain"],
   },
   {
     label: "Infraestructura",
-    items: ["Docker", "Git / GitHub", "Stripe"],
+    items: ["Docker", "Git / GitHub / GitLab", "Stripe", "WordPress / WooCommerce"],
   },
   {
     label: "CI/CD",
     items: ["Vercel", "Azure DevOps", "Railway", "GitHub Actions"],
+  },
+  {
+    label: "Calidad",
+    items: ["Jest", "React Testing Library", "TDD"],
   },
 ];
 

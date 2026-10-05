@@ -22,7 +22,7 @@ export function Hero() {
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400" />
           </span>
           <span className="text-[11px] text-white/50 tracking-[0.22em] uppercase">
-            Disponible para proyectos
+            Disponible para proyectos y roles remotos
           </span>
         </motion.div>
 

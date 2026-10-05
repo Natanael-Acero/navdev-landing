@@ -96,23 +96,26 @@ function ProjectRow({
           {String(index + 1).padStart(2, "0")}
         </span>
 
-        {/* Title */}
-        <motion.h3
-          className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white uppercase leading-none flex-1 min-w-0"
+        {/* Title + description */}
+        <motion.div
+          className="flex-1 min-w-0"
           variants={{ hover: { x: 8 } }}
           transition={{ type: "spring", stiffness: 400, damping: 30 }}
         >
-          {p.title}
-        </motion.h3>
+          <h3 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white uppercase leading-none">
+            {p.title}
+          </h3>
+          <p className="mt-3 text-sm text-white/40 leading-relaxed max-w-xl">
+            {p.description}
+          </p>
+          <p className="mt-2 text-[11px] text-white/25 tracking-[0.18em] uppercase">
+            {p.tech.join(" · ")}
+          </p>
+        </motion.div>
 
         {/* Tag — hidden on small screens */}
         <span className="hidden md:block text-xs text-white/30 tracking-[0.2em] uppercase shrink-0 max-w-[200px] text-right leading-snug">
           {p.tag}
-        </span>
-
-        {/* Year */}
-        <span className="hidden sm:block text-xs text-white/25 font-mono shrink-0">
-          {p.year}
         </span>
 
         {/* Arrow */}

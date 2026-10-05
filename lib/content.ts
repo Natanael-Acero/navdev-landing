@@ -2,6 +2,8 @@ export const CONTACT = {
   whatsapp: "524491545195",
   email: "nataacero1@gmail.com",
   brand: "Natanael Acero",
+  linkedin: "https://www.linkedin.com/in/natanael-acero",
+  github: "https://github.com/Natanael-Acero",
 };
 
 export const services = [
@@ -113,7 +115,6 @@ export const steps = [
 export const portfolio = [
   {
     tag: "SaaS · Software de Rentas",
-    year: "2024",
     title: "Rentaio",
     description:
       "Plataforma todo-en-uno para administradores de propiedades en México. Contratos, pagos, inquilinos y reportes en un solo lugar.",
@@ -122,19 +123,17 @@ export const portfolio = [
   },
   {
     tag: "E-commerce · Moda Streetwear",
-    year: "2024",
     title: "OV'SIZE",
     description:
-      "Tienda en línea para marca de ropa streetwear con catálogo, carrito y experiencia visual inmersiva.",
+      "Tienda en línea para una marca de ropa streetwear, con tema personalizado, catálogo, carrito y lanzamientos por drops.",
     tech: ["WordPress", "WooCommerce", "Custom Theme"],
     url: "https://ovsize.store",
   },
   {
     tag: "Plataforma Web + App",
-    year: "2025",
     title: "Champions Performance",
     description:
-      "Plataforma web y app móvil para entrenadores: gestión de atletas, planes de entrenamiento y seguimiento de progreso.",
+      "Plataforma web y app móvil para entrenadores y nutriólogos: clientes, planes de entrenamiento y nutrición, cobros con Stripe y resúmenes con IA del check-in semanal.",
     tech: ["Next.js", "React Native", "Node.js"],
     url: "https://www.championsperformance.app",
   },

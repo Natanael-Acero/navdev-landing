@@ -8,30 +8,40 @@ const experience = [
     role: "Ingeniero de Software",
     period: "2025 — Presente",
     location: "Remoto",
+    description:
+      "Operación LATAM de una multinacional de alimentos: migración de la app móvil de ventas en campo, optimización de procesos y seguridad en ventas.",
   },
   {
     company: "Handcloud",
     role: "Desarrollador Full Stack",
     period: "2023 — 2025",
     location: "Remoto",
+    description:
+      "Plataformas para la operación LATAM de una multinacional de alimentos (5+ países) y sistemas web internos, con liderazgo técnico y mentoría.",
   },
   {
     company: "Vianney Textil Hogar",
-    role: "Desarrollador Web",
+    role: "Desarrollador Full Stack",
     period: "2022 — 2023",
     location: "Aguascalientes, México",
+    description:
+      "Servicio de integración bancaria SFTP a Oracle, apps de auditoría de inventario y flujo de trabajo con Git y GitLab.",
   },
   {
     company: "Irys",
     role: "Desarrollador Frontend",
     period: "2022",
     location: "Remoto",
+    description:
+      "Librería de componentes React con Storybook y pruebas con Jest y React Testing Library.",
   },
   {
     company: "Universidad Tecnológica de Aguascalientes",
-    role: "Desarrollador de Software · Estadía",
+    role: "Desarrollador MEAN Stack",
     period: "2020 — 2022",
     location: "Aguascalientes, México",
+    description:
+      "Plataforma de transporte, estudios socioeconómicos automatizados y bolsa de trabajo docente.",
   },
 ];
 
@@ -79,6 +89,9 @@ export function Experiencia() {
                     </span>
                   </div>
                   <p className="text-xs text-white/25 mt-1">{item.location}</p>
+                  <p className="text-sm text-white/40 mt-3 max-w-xl leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
                 <span className="text-xs text-white/30 font-mono mt-2 sm:mt-0 sm:ml-6 shrink-0">
                   {item.period}
