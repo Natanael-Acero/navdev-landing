@@ -39,7 +39,7 @@ export function CtaFinal() {
             fill
             sizes="(min-width: 1024px) 66vw, 100vw"
             onLoad={() => setPhotoLoaded(true)}
-            className={`object-cover object-[58%_22%] grayscale contrast-[1.08] brightness-[0.8] transition-opacity duration-1000 ${
+            className={`origin-[52%_38%] scale-[1.25] object-cover object-[52%_30%] grayscale contrast-[1.08] brightness-[0.8] transition-opacity duration-1000 lg:-translate-x-[15%] lg:scale-[1.55] ${
               photoLoaded ? "opacity-100" : "opacity-0"
             }`}
           />
