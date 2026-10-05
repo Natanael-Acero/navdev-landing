@@ -1,87 +1,88 @@
 "use client";
 import Image from "next/image";
-import { useRef } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useInView, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 export function CtaFinal() {
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const reduceMotion = useReducedMotion();
+  const [photoLoaded, setPhotoLoaded] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
 
-  // Parallax: photo moves up as you scroll down
-  const photoY = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  // Parallax suave: la foto se desplaza más despacio que la página
+  const photoY = useTransform(scrollYProgress, [0, 1], reduceMotion ? [0, 0] : [36, -36]);
 
   return (
-    <motion.section
+    <section
       ref={sectionRef}
-      className="bg-[#080808] px-6 sm:px-10 lg:px-16 py-32 border-t border-white/7 text-center"
+      className="relative overflow-hidden bg-[#080808] border-t border-white/7 lg:min-h-[100dvh] lg:flex lg:items-center"
     >
-      <div className="max-w-5xl mx-auto">
-        {/* Big heading — words slide up */}
-        <motion.div
-          className="font-display text-[14vw] sm:text-[11vw] lg:text-[9vw] text-white uppercase leading-[0.88] mb-2"
-          initial={{ opacity: 0, y: 24 }}
+      {/* Foto: pantalla completa a la izquierda, disuelta hacia el fondo */}
+      <motion.div
+        className="cta-photo-mask relative h-[68svh] w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-auto lg:w-[66%]"
+        initial={{ opacity: 0, scale: 1.06 }}
+        animate={inView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 1.4, ease }}
+      >
+        <motion.div className="absolute -inset-y-10 inset-x-0" style={{ y: photoY }}>
+          <Image
+            src="/navdev-profile.jpeg"
+            alt="Natanael Acero, ingeniero de software"
+            fill
+            sizes="(min-width: 1024px) 66vw, 100vw"
+            onLoad={() => setPhotoLoaded(true)}
+            className={`object-cover object-[58%_22%] grayscale contrast-[1.08] brightness-[0.8] transition-opacity duration-1000 ${
+              photoLoaded ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        </motion.div>
+      </motion.div>
+
+      {/* Texto y botón */}
+      <div className="relative z-10 -mt-24 px-6 pb-24 sm:px-10 lg:mt-0 lg:ml-auto lg:w-[52%] lg:px-16 lg:py-32">
+        <motion.h2
+          className="font-display text-[19vw] sm:text-[15vw] lg:text-[8.5vw] text-white uppercase leading-[0.86] tracking-tight"
+          initial={{ opacity: 0, y: 28 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.9, delay: 0.15, ease }}
         >
           Trabajemos
-        </motion.div>
-        <motion.div
-          className="font-display text-[14vw] sm:text-[11vw] lg:text-[9vw] text-white uppercase leading-[0.88] mb-12"
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.9, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-        >
+          <br />
           Juntos©
-        </motion.div>
+        </motion.h2>
 
-        {/* CTA button */}
+        <motion.p
+          className="mt-8 max-w-sm text-sm text-white/55 leading-relaxed"
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.35, ease }}
+        >
+          Desde Aguascalientes, México — creo herramientas digitales que hacen crecer negocios
+          reales.
+        </motion.p>
+
         <motion.a
           href={buildWhatsAppUrl("Hola, quiero platicar sobre mi proyecto.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block border border-white/25 rounded-full px-10 py-3.5 text-xs font-bold tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-all duration-300 mb-20"
-          initial={{ opacity: 0, y: 20 }}
+          className="mt-10 inline-flex items-center gap-3 rounded-full bg-white px-9 py-4 text-xs font-bold tracking-[0.2em] uppercase text-black transition-colors duration-300 hover:bg-white/85"
+          initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.7, delay: 0.5, ease }}
           whileTap={{ scale: 0.97 }}
         >
           Contactar ahora
+          <span aria-hidden="true">↗</span>
         </motion.a>
-
-        {/* Arch photo with parallax */}
-        <motion.div
-          className="mx-auto w-60 sm:w-72 overflow-hidden rounded-t-full border border-white/10 shadow-[0_0_60px_-12px_rgba(255,255,255,0.06)]"
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          style={{ y: photoY }}
-        >
-          <Image
-            src="/navdev-profile.jpeg"
-            alt="Natanael Acero — Software Engineer"
-            width={400}
-            height={500}
-            className="w-full h-80 sm:h-96 object-cover object-top"
-          />
-        </motion.div>
-
-        {/* Bio */}
-        <motion.p
-          className="mt-10 text-xs text-white/35 tracking-widest uppercase max-w-md mx-auto leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.7 }}
-        >
-          Desde Aguascalientes, México — creo herramientas digitales que hacen crecer negocios reales.
-        </motion.p>
       </div>
-    </motion.section>
+    </section>
   );
 }
