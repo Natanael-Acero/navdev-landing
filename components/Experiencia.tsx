@@ -2,46 +2,27 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const experience = [
+const chapters = [
   {
-    company: "SOCIUS",
-    role: "Ingeniero de Software",
-    period: "2025 — Presente",
-    location: "Remoto",
-    description:
-      "Operación LATAM de una multinacional de alimentos: migración de la app móvil de ventas en campo, optimización de procesos y seguridad en ventas.",
-  },
-  {
-    company: "Handcloud",
-    role: "Desarrollador Full Stack",
-    period: "2023 — 2025",
-    location: "Remoto",
-    description:
-      "Plataformas para la operación LATAM de una multinacional de alimentos (5+ países) y sistemas web internos, con liderazgo técnico y mentoría.",
-  },
-  {
-    company: "Vianney Textil Hogar",
-    role: "Desarrollador Full Stack",
-    period: "2022 — 2023",
-    location: "Aguascalientes, México",
-    description:
-      "Servicio de integración bancaria SFTP a Oracle, apps de auditoría de inventario y flujo de trabajo con Git y GitLab.",
-  },
-  {
-    company: "Irys",
-    role: "Desarrollador Frontend",
-    period: "2022",
-    location: "Remoto",
-    description:
-      "Librería de componentes React con Storybook y pruebas con Jest y React Testing Library.",
-  },
-  {
-    company: "Universidad Tecnológica de Aguascalientes",
-    role: "Desarrollador MEAN Stack",
+    title: "Cimientos full stack",
     period: "2020 — 2022",
-    location: "Aguascalientes, México",
     description:
-      "Plataforma de transporte, estudios socioeconómicos automatizados y bolsa de trabajo docente.",
+      "Empecé construyendo productos web y móviles de punta a punta: una plataforma de transporte con apps para pasajeros y conductores, estudios socioeconómicos automatizados y una bolsa de trabajo para docentes. Después me especialicé en interfaces React reutilizables, con librería de componentes y pruebas.",
+    tech: ["Angular", "Ionic", "Node.js", "MongoDB", "React", "Storybook"],
+  },
+  {
+    title: "Sistemas que mueven operaciones",
+    period: "2022 — 2023",
+    description:
+      "En la industria textil conecté software con procesos críticos: un servicio que lee archivos bancarios por SFTP y los guarda en Oracle para validar transacciones en tiempo real, una app para auditar inventarios y un flujo de trabajo con Git que ordenó al equipo.",
+    tech: ["Angular", "Node.js", "Oracle", "Servicios Windows", "GitLab"],
+  },
+  {
+    title: "Plataformas para LATAM",
+    period: "2023 — Presente",
+    description:
+      "Lidero proyectos y acompaño a otros desarrolladores en la operación de una multinacional de alimentos en más de 5 países de Latinoamérica: cotizador regional, modernización de un sistema heredado a PWA con modo offline y migración de la app móvil que usan los vendedores en campo, con mejoras de procesos y de seguridad en ventas.",
+    tech: [".NET", "Angular", "React", ".NET MAUI", "SQL Server", "Azure DevOps"],
   },
 ];
 
@@ -65,39 +46,54 @@ export function Experiencia() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
-              Experiencia
+              Mi
+              <br />
+              Trayectoria
             </motion.h2>
           </div>
 
-          {/* Experience list */}
-          <div ref={ref} className="flex-1 border-t border-white/7">
-            {experience.map((item, i) => (
-              <motion.div
-                key={item.company}
-                className="flex flex-col sm:flex-row sm:items-center justify-between py-7 border-b border-white/7 group"
-                initial={{ opacity: 0, x: 40 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 + i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
-              >
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-baseline gap-3 flex-wrap">
-                    <h3 className="font-display text-2xl sm:text-3xl text-white uppercase group-hover:text-white/65 transition-colors duration-500 break-words">
-                      {item.company}
+          {/* Career chapters */}
+          <div ref={ref} className="flex-1">
+            <div className="border-t border-white/7">
+              {chapters.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-8 py-9 border-b border-white/7 group"
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.1 + i * 0.08,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
+                >
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-display text-2xl sm:text-3xl text-white uppercase group-hover:text-white/65 transition-colors duration-500 text-balance">
+                      {item.title}
                     </h3>
-                    <span className="text-xs text-white/40 tracking-widest uppercase shrink-0">
-                      {item.role}
-                    </span>
+                    <p className="mt-4 text-sm text-white/45 leading-relaxed max-w-[65ch]">
+                      {item.description}
+                    </p>
+                    <p className="mt-4 text-[11px] text-white/25 tracking-[0.18em] uppercase">
+                      {item.tech.join(" · ")}
+                    </p>
                   </div>
-                  <p className="text-xs text-white/25 mt-1">{item.location}</p>
-                  <p className="text-sm text-white/40 mt-3 max-w-xl leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-                <span className="text-xs text-white/30 font-mono mt-2 sm:mt-0 sm:ml-6 shrink-0">
-                  {item.period}
-                </span>
-              </motion.div>
-            ))}
+                  <span className="text-xs text-white/30 font-mono tabular-nums shrink-0 sm:pt-2">
+                    {item.period}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.p
+              className="mt-10 text-sm text-white/35 leading-relaxed max-w-[65ch]"
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.7, delay: 0.5 }}
+            >
+              Hoy combino las dos cosas: sigo construyendo para empresas y lanzo mis propios
+              productos, como Rentaio y Champions Performance, de la idea a producción.
+            </motion.p>
           </div>
         </div>
       </div>

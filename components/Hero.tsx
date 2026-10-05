@@ -51,7 +51,7 @@ export function Hero() {
           Desde Aguascalientes, México
         </span>
         <span className="text-[11px] text-white/30 tracking-[0.2em] uppercase">
-          Ingeniero de Software · Freelance
+          Ingeniero de Software Full Stack · Freelance
         </span>
       </motion.div>
     </section>
